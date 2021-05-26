@@ -1,0 +1,9 @@
+C:\Users\guz28\Desktop\C#\IpInformationProvider\IIpInformationProvider\bin\Debug\netcoreapp3.0\IIpInformationProvider.deps.json
+C:\Users\guz28\Desktop\C#\IpInformationProvider\IIpInformationProvider\bin\Debug\netcoreapp3.0\IIpInformationProvider.dll
+C:\Users\guz28\Desktop\C#\IpInformationProvider\IIpInformationProvider\bin\Debug\netcoreapp3.0\IIpInformationProvider.pdb
+C:\Users\guz28\Desktop\C#\IpInformationProvider\IIpInformationProvider\obj\Debug\netcoreapp3.0\IIpInformationProvider.csprojAssemblyReference.cache
+C:\Users\guz28\Desktop\C#\IpInformationProvider\IIpInformationProvider\obj\Debug\netcoreapp3.0\IIpInformationProvider.AssemblyInfoInputs.cache
+C:\Users\guz28\Desktop\C#\IpInformationProvider\IIpInformationProvider\obj\Debug\netcoreapp3.0\IIpInformationProvider.AssemblyInfo.cs
+C:\Users\guz28\Desktop\C#\IpInformationProvider\IIpInformationProvider\obj\Debug\netcoreapp3.0\IIpInformationProvider.csproj.CoreCompileInputs.cache
+C:\Users\guz28\Desktop\C#\IpInformationProvider\IIpInformationProvider\obj\Debug\netcoreapp3.0\IIpInformationProvider.dll
+C:\Users\guz28\Desktop\C#\IpInformationProvider\IIpInformationProvider\obj\Debug\netcoreapp3.0\IIpInformationProvider.pdb

@@ -1,0 +1,13 @@
+C:\Users\guz28\Desktop\C#\IpInformationProvider\IpInformationProvider\bin\Debug\netcoreapp3.1\IpInformationProvider.exe
+C:\Users\guz28\Desktop\C#\IpInformationProvider\IpInformationProvider\bin\Debug\netcoreapp3.1\IpInformationProvider.deps.json
+C:\Users\guz28\Desktop\C#\IpInformationProvider\IpInformationProvider\bin\Debug\netcoreapp3.1\IpInformationProvider.runtimeconfig.json
+C:\Users\guz28\Desktop\C#\IpInformationProvider\IpInformationProvider\bin\Debug\netcoreapp3.1\IpInformationProvider.runtimeconfig.dev.json
+C:\Users\guz28\Desktop\C#\IpInformationProvider\IpInformationProvider\bin\Debug\netcoreapp3.1\IpInformationProvider.dll
+C:\Users\guz28\Desktop\C#\IpInformationProvider\IpInformationProvider\bin\Debug\netcoreapp3.1\IpInformationProvider.pdb
+C:\Users\guz28\Desktop\C#\IpInformationProvider\IpInformationProvider\obj\Debug\netcoreapp3.1\IpInformationProvider.csprojAssemblyReference.cache
+C:\Users\guz28\Desktop\C#\IpInformationProvider\IpInformationProvider\obj\Debug\netcoreapp3.1\IpInformationProvider.AssemblyInfoInputs.cache
+C:\Users\guz28\Desktop\C#\IpInformationProvider\IpInformationProvider\obj\Debug\netcoreapp3.1\IpInformationProvider.AssemblyInfo.cs
+C:\Users\guz28\Desktop\C#\IpInformationProvider\IpInformationProvider\obj\Debug\netcoreapp3.1\IpInformationProvider.csproj.CoreCompileInputs.cache
+C:\Users\guz28\Desktop\C#\IpInformationProvider\IpInformationProvider\obj\Debug\netcoreapp3.1\IpInformationProvider.dll
+C:\Users\guz28\Desktop\C#\IpInformationProvider\IpInformationProvider\obj\Debug\netcoreapp3.1\IpInformationProvider.pdb
+C:\Users\guz28\Desktop\C#\IpInformationProvider\IpInformationProvider\obj\Debug\netcoreapp3.1\IpInformationProvider.genruntimeconfig.cache
