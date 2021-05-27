@@ -33,6 +33,12 @@ namespace IIpInformationProvider
                 dynamic obj = JsonConvert.DeserializeObject(content);
                 // convert json object to model
                 var responseModel = obj.ToObject<IPDetailsResponseModel>();
+
+                // check if the model is empty
+                if((responseModel.city == null) && (responseModel.country_name == null) && (responseModel.continent_name == null) && (responseModel.latitude == 0) && (responseModel.longitude == 0)){
+                    return null;
+                }
+
                 IpDetails ipDetails = new IpDetails
                 {
 
