@@ -1,5 +1,6 @@
 using IpWebApi.Business;
 using IpWebApi.Models;
+using IpWebApi.Workers;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -31,11 +32,14 @@ namespace IpWebApi
         {
             services.AddControllers();
             services.AddScoped<IpBusinessInterface, IpBusiness>();
+            services.AddScoped<IpBatchBusinessInterface, IpBatchBusiness>();
             services.AddSwaggerGen();
 
             var connection = "Server=localhost;Database=IPInformation;Trusted_Connection=True;";
             services.AddDbContext<IpDetailsDbContext>(options => options.UseSqlServer(connection));
             services.AddMemoryCache();
+
+            services.AddTransient<BackgroundWorker>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

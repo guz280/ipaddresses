@@ -23,6 +23,7 @@ namespace IpWebApi.Business
 
         public async Task<IpDetails> GetIpDetailsAsync(string ip)
         {
+            CommonBusiness cb = new CommonBusiness(_cache);
             // Step1 -> get from cache
             var cacheKey = ip;
 
@@ -39,7 +40,7 @@ namespace IpWebApi.Business
             if (resultDb != null)
             {
                 IpDetails details = MapFromDBModel(resultDb);
-                SetCache(cacheKey, details);
+                cb.SetCache<IpDetails>(cacheKey, details, 1);
                 return details;
             }
 
@@ -53,11 +54,11 @@ namespace IpWebApi.Business
             }
 
             // Step 4 -> save to DB
-            _context.Details.Add(MapToDBModel(resultApi, ip));
+            _context.Details.Add(cb.MapToDBModel(resultApi, ip));
             await _context.SaveChangesAsync();
 
             // Step 5 -> save to cache
-            SetCache(cacheKey, resultApi);
+            cb.SetCache<IpDetails>(cacheKey, resultApi, 1);
 
 
             return resultApi;
@@ -68,19 +69,6 @@ namespace IpWebApi.Business
 
 
         #region Private methods
-        private Details MapToDBModel(IpDetails apiModel, string ip)
-        {
-            return new Details
-            {
-                Ip = ip,
-                City = apiModel.City,
-                Continent = apiModel.Continent,
-                Country = apiModel.Country,
-                Latitude = Convert.ToSingle(apiModel.Latitude),
-                Longitude = Convert.ToSingle(apiModel.Longitude)
-            };
-        }
-
         private IpDetails MapFromDBModel(Details dbModel)
         {
             return new IpDetails
@@ -92,15 +80,6 @@ namespace IpWebApi.Business
                 Longitude = Convert.ToDouble(dbModel.Longitude)
             };
         }
-
-        private void SetCache(string cacheKey, IpDetails data)
-        {
-            MemoryCacheEntryOptions cacheExpirationOptions = new MemoryCacheEntryOptions();
-            cacheExpirationOptions.AbsoluteExpiration = DateTime.Now.AddMinutes(1);
-
-            _cache.Set<IpDetails>(cacheKey, data, cacheExpirationOptions);
-        }
-
         #endregion
     }
 }

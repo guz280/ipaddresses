@@ -1,0 +1,47 @@
+﻿1. A file to enter the Ips is found in the solution named IpList.txt. Important do not enter duplicate Ips 
+	and they should all be seperated by comma
+
+2. Get -> ​/api​/ipdetails​/{ip}
+
+3. Put -> /api
+	This will get the ip list from a file (as described in point 1) and Adds or updates the IP in the DB 
+	IMP: There is a delay in the BackgroundWorker.cs which will help us to see & test the next call. 
+	This timer will eventually be removed
+
+4. Get -> ​/{guid}
+	By entering the guid returned in the previous call will give you the status of the whole batch.
+
+
+--------------------------------------------------------------------------------------------------------------
+--------------------------------SQL SCRIPT--------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------
+5. Create table script
+
+			USE [IPInformation]
+			GO
+
+			/****** Object:  Table [dbo].[Details]    Script Date: 27/05/2021 15:18:59 ******/
+			SET ANSI_NULLS ON
+			GO
+
+			SET QUOTED_IDENTIFIER ON
+			GO
+
+			CREATE TABLE [dbo].[Details](
+				[IP] [nvarchar](50) NOT NULL,
+				[City] [nvarchar](50) NOT NULL,
+				[Country] [nvarchar](50) NOT NULL,
+				[Continent] [nvarchar](50) NOT NULL,
+				[Latitude] [float] NOT NULL,
+				[Longitude] [float] NOT NULL,
+				[Updated] [datetime2] NOT NULL DEFAULT GETDATE(),
+			 CONSTRAINT [PK_Details] PRIMARY KEY CLUSTERED 
+			(
+				[IP] ASC
+			)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+			) ON [PRIMARY]
+			GO
+
+--------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------
