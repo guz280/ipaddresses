@@ -12,6 +12,19 @@
 	By entering the guid returned in the previous call will give you the status of the whole batch.
 
 
+
+--------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------
+
+
+In order to enable the program to be more user friendly the program could be developed further by:
+        - Validating inputs & passing ips through body not read from file
+        - The hard coded values will be read from config or DB 
+		- At the moment we are using the memory cache to keep track of which ips where processed.
+		  This can be be by saving them to DB.
+		- We are not keeping any kind of logs 
+	
 --------------------------------------------------------------------------------------------------------------
 --------------------------------SQL SCRIPT--------------------------------------------------------------------
 --------------------------------------------------------------------------------------------------------------
