@@ -1,6 +1,7 @@
 ﻿using IIpInformationProvider;
 using NUnit.Framework;
 using System;
+using System.Threading.Tasks;
 
 namespace UnitTests
 {
@@ -9,7 +10,7 @@ namespace UnitTests
     public class UnitTestsInfoProvider
     {
         [Test]
-        public async System.Threading.Tasks.Task TestApiAsync()
+        public async Task TestApiAsync()
         {
             IIpInfoProvider iip = new IIpInfoProvider();
             var result = await iip.GetDetails("195.158.76.51");
