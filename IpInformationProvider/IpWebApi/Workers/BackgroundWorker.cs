@@ -1,13 +1,13 @@
-﻿using IIpInformationProvider;
-using IpWebApi.Business;
-using IpWebApi.Models;
-using Microsoft.Extensions.Caching.Memory;
-using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Linq;
+using IpWebApi.Models;
 using System.Threading;
+using IpWebApi.Business;
+using IIpInformationProvider;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Caching.Memory;
+
 
 namespace IpWebApi.Workers
 {
@@ -83,11 +83,12 @@ namespace IpWebApi.Workers
                 }
 
                 // Remove IpRequest details from cache after completion
+                // This was not removed so that we can test and call the GetJobProgress with guid
                 //_cache.Remove("IpRequest");
             }
             catch (Exception e)
             {
-
+                // log exception
                 throw;
             }
         }

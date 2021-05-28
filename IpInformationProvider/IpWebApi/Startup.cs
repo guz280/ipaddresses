@@ -31,8 +31,8 @@ namespace IpWebApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddScoped<IpBusinessInterface, IpBusiness>();
-            services.AddScoped<IpBatchBusinessInterface, IpBatchBusiness>();
+            services.AddScoped<IIpBusinessInterface, IpBusiness>();
+            services.AddScoped<IIpBatchBusinessInterface, IpBatchBusiness>();
             services.AddSwaggerGen();
 
             var connection = "Server=localhost;Database=IPInformation;Trusted_Connection=True;";

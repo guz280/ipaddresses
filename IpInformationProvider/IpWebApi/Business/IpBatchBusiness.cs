@@ -1,13 +1,12 @@
-﻿using IpWebApi.Models;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.IO;
 using System.Linq;
-using System.Threading.Tasks;
+using IpWebApi.Models;
+using System.Collections.Generic;
 
 namespace IpWebApi.Business
 {
-    public class IpBatchBusiness : IpBatchBusinessInterface
+    public class IpBatchBusiness : IIpBatchBusinessInterface
     {
         public IpRequest CreateRequest(string[] ips)
         {

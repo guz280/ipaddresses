@@ -1,6 +1,5 @@
-﻿using IIpInformationProvider;
-using NUnit.Framework;
-using System;
+﻿using NUnit.Framework;
+using IIpInformationProvider;
 using System.Threading.Tasks;
 
 namespace UnitTests

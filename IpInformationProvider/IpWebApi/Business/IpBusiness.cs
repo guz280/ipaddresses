@@ -1,16 +1,14 @@
-﻿using IIpInformationProvider;
-using IpWebApi.Models;
-using Microsoft.Extensions.Caching.Memory;
-using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Linq;
-using System.Runtime.Caching;
+using IpWebApi.Models;
 using System.Threading.Tasks;
+using IIpInformationProvider;
+using Microsoft.Extensions.Caching.Memory;
+
 
 namespace IpWebApi.Business
 {
-    public class IpBusiness : IpBusinessInterface
+    public class IpBusiness : IIpBusinessInterface
     {
         private readonly IpDetailsDbContext _context;
         private IMemoryCache _cache;

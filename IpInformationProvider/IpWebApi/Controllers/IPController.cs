@@ -1,11 +1,8 @@
-﻿using IIpInformationProvider;
-using IpWebApi.Business;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using IpWebApi.Business;
 using System.Threading.Tasks;
+using IIpInformationProvider;
+using Microsoft.AspNetCore.Mvc;
+
 
 namespace IpWebApi.Controllers
 {
@@ -13,9 +10,9 @@ namespace IpWebApi.Controllers
     [ApiController]
     public class IPController : ControllerBase
     {
-        private readonly IpBusinessInterface _ipBusinessInterface;
+        private readonly IIpBusinessInterface _ipBusinessInterface;
 
-        public IPController(IpBusinessInterface ipBusinessInterface)
+        public IPController(IIpBusinessInterface ipBusinessInterface)
         {
             this._ipBusinessInterface = ipBusinessInterface;
         }

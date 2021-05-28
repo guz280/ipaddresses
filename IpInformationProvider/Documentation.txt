@@ -1,15 +1,17 @@
-﻿1. A file to enter the Ips is found in the solution named IpList.txt. Important do not enter duplicate Ips 
-	and they should all be seperated by comma
+﻿1. A file to enter the Ips is found in the solution named IpList.txt.
+	Important do not enter duplicate Ips, and they should all be seperated by a comma.
 
-2. Get -> ​/api​/ipdetails​/{ip}
+2. (Task 1 -> Dynamic Link Library (DLL)) -> Project IIpInformationProvider
 
-3. Put -> /api
+3. Get -> ​/api​/ipdetails​/{ip} (Task 2 -> WebApi)
+
+4. Put -> /api (Task 3 -> WebApi: Batch Request Job)
 	This will get the ip list from a file (as described in point 1) and Adds or updates the IP in the DB 
 	IMP: There is a delay in the BackgroundWorker.cs which will help us to see & test the next call. 
-	This timer will eventually be removed
+	This timer will eventually be removed (used for demo purposes)
 
 4. Get -> ​/{guid}
-	By entering the guid returned in the previous call will give you the status of the whole batch.
+	By entering the guid returned in the previous call will give you the status of the whole batch. Example-> 2/33 - 5/33.....
 
 
 
@@ -22,8 +24,9 @@ In order to enable the program to be more user friendly the program could be dev
         - Validating inputs & passing ips through body not read from file
         - The hard coded values will be read from config or DB 
 		- At the moment we are using the memory cache to keep track of which ips where processed.
-		  This can be be by saving them to DB.
-		- We are not keeping any kind of logs 
+		  This can be be by saving them to DB. We can also use Redis Cache.
+		- We are not keeping any kind of logs. 
+		- Duplicate Ip handling.
 	
 --------------------------------------------------------------------------------------------------------------
 --------------------------------SQL SCRIPT--------------------------------------------------------------------

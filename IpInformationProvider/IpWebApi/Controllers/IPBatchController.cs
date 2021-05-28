@@ -1,14 +1,13 @@
-﻿using IpWebApi.Business;
+﻿using System;
+using System.Linq;
 using IpWebApi.Models;
+using System.Threading;
+using IpWebApi.Business;
 using IpWebApi.Workers;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading;
-using System.Threading.Tasks;
+
 
 namespace IpWebApi.Controllers
 {
@@ -16,10 +15,10 @@ namespace IpWebApi.Controllers
     public class IPBatchController : ControllerBase
     {
         private readonly IServiceProvider _iserviceProvider;
-        private readonly IpBatchBusinessInterface _ipBatchBusinessInterface;
+        private readonly IIpBatchBusinessInterface _ipBatchBusinessInterface;
         private IMemoryCache _cache;
 
-        public IPBatchController(IServiceProvider iserviceProvider, IpBatchBusinessInterface ipBatchBusinessInterface, IMemoryCache cache)
+        public IPBatchController(IServiceProvider iserviceProvider, IIpBatchBusinessInterface ipBatchBusinessInterface, IMemoryCache cache)
         {
             _iserviceProvider = iserviceProvider;
             _ipBatchBusinessInterface = ipBatchBusinessInterface;
@@ -57,27 +56,7 @@ namespace IpWebApi.Controllers
 
         }
 
-        private async void BatchHandlerAsync(object obj)
-        {
-            
-
-            //while (count < 1)
-            //{
-
-            // Here we create a new scope for the IServiceProvider so that we can get already built objects from the Inversion Of Control Container.
-            using (IServiceScope scope = _iserviceProvider.CreateScope())
-                {
-                    // Here we retrieve the singleton instance of the BackgroundWorker.
-                    BackgroundWorker backgroundWorker = scope.ServiceProvider.GetRequiredService<BackgroundWorker>();
-
-                    
-                    await backgroundWorker.ExecuteAsync();
-                }
-
-                //Thread.Sleep(TimeSpan.FromSeconds(5));
-            //}
-        }
-
+       
 
         [HttpGet("{guid}")]
         public ActionResult GetJobProgress(string guid)
@@ -89,7 +68,7 @@ namespace IpWebApi.Controllers
             {
                 return StatusCode(500);
             }
-            // get the number of ips that processed is true
+            // get the number of ips that processed is equal to  true
             int count = 0;
             foreach (var item in ipRequest.IpStatus)
             {
@@ -103,6 +82,20 @@ namespace IpWebApi.Controllers
             return Ok(status);
 
         }
+
+
+        #region Private Methods
+        private async void BatchHandlerAsync(object obj)
+        {
+            using (IServiceScope scope = _iserviceProvider.CreateScope())
+            {
+                BackgroundWorker backgroundWorker = scope.ServiceProvider.GetRequiredService<BackgroundWorker>();
+
+                await backgroundWorker.ExecuteAsync();
+            }
+        }
+        #endregion
+
 
     }
 }
