@@ -13,7 +13,8 @@
 4. Get -> ​/{guid}
 	By entering the guid returned in the previous call will give you the status of the whole batch. Example-> 2/33 - 5/33.....
 
-
+5. In order to be able to test the SQL insertion, need to update the connection string of your local DB.
+   Connection string is found in Startup.cs (var connection)
 
 --------------------------------------------------------------------------------------------------------------
 --------------------------------------------------------------------------------------------------------------
