@@ -1,8 +1,6 @@
-﻿using Newtonsoft.Json;
-using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System;
 using System.Net.Http;
+using Newtonsoft.Json;
 using System.Threading.Tasks;
 
 namespace IIpInformationProvider

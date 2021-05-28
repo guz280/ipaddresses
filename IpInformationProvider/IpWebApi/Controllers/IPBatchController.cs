@@ -25,7 +25,7 @@ namespace IpWebApi.Controllers
             _cache = cache;
         }
 
-        [HttpPut]
+        [HttpPost]
         [Route("api/")]
         public ActionResult UpdateRequest()
         {
